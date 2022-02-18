@@ -65,16 +65,20 @@ function displayInfo() {
         document.getElementById("qerror").style.display = "none";
         if (vOption == "vnull") {
           document.getElementById("error").style.display = "inline";
-        } else {
+        } 
+        else {
           document.getElementById("error").style.display = "none";
+          console.log(vOption);
           if (vOption == "Bus" || vOption == "Truck") {
             fWeight -= 2 * 10000;
+            
           } else if (vOption == "Microbus") {
             fWeight -= 1 * 5000;
           } else if (vOption == "Motorcycle") {
             fWeight -= 1 * 100;
           } else {
             fWeight -= qnt * 65;
+            
           }
 
           var aBusTruck = Math.floor(fWeight / 10000);
@@ -204,6 +208,7 @@ btn.onclick = function () {
         document.getElementById("VtNo").innerHTML = tNo;
         document.getElementById("tPname").innerHTML = document.getElementById("pName").value;
         document.getElementById("fName").innerHTML = document.getElementById("foption").value;
+        document.getElementById("vFName").innerHTML = document.getElementById("foption").value;
         document.getElementById("tPhone").innerHTML = document.getElementById("pPhone").value;
         document.getElementById("tSeat").innerHTML = document.getElementById("pSeatName").value;
         document.getElementById("tVname").innerHTML = document.getElementById("vName").value;
@@ -229,7 +234,7 @@ btn.onclick = function () {
     else{
       if(vName == '' || vNumber == '')
       {
-
+        
       }
       else
       {
@@ -238,7 +243,7 @@ btn.onclick = function () {
         document.getElementById("tNo").innerHTML = tNo;
         document.getElementById("VtNo").innerHTML = tNo;
         document.getElementById("tPname").innerHTML = document.getElementById("pName").value;
-        document.getElementById("fName").innerHTML = document.getElementById("foption").value;
+        document.getElementById("vFName").innerHTML = document.getElementById("foption").value;
         document.getElementById("tPhone").innerHTML = document.getElementById("pPhone").value;
         document.getElementById("tSeat").innerHTML = document.getElementById("pSeatName").value;
         document.getElementById("tVname").innerHTML = document.getElementById("vName").value;
