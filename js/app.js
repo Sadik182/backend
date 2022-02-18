@@ -99,7 +99,8 @@ function displayInfo() {
       roption == "rnull"
     ) {
       console.log("field must fill up");
-    } else {
+    } 
+    else {
       document.getElementById("qerror").style.display = "none";
       if (vOption == "vnull") {
         document.getElementById("error").style.display = "inline";
@@ -172,31 +173,94 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal
-btn.onclick = function () {
-  modal.style.display = "block";
-  var tNo = 1000;
-  document.getElementById("tNo").innerHTML = tNo;
-  document.getElementById("VtNo").innerHTML = tNo;
-  document.getElementById("tPname").innerHTML = document.getElementById("pName").value;
-  document.getElementById("tPhone").innerHTML = document.getElementById("pPhone").value;
-  document.getElementById("tSeat").innerHTML = document.getElementById("pSeatName").value;
-  document.getElementById("tVname").innerHTML = document.getElementById("vName").value;
-  document.getElementById("tVnumber").innerHTML = document.getElementById("vNumber").value;
-  document.getElementById('tPqunt').innerHTML = document.getElementById('qnt').value;
-  // document.getElementById('sVqunt').innerHTML = document.getElementById('qnt').value;
-  document.getElementById("sDate").innerHTML = document.getElementById("date").value;
-  document.getElementById("sdDate").innerHTML = document.getElementById("date").value;
 
-  var quantity = document.getElementById("qnt").value;
-  document.getElementById("PTprice").innerHTML = quantity * 100;
-  
+btn.onclick = function () {
   var vOption = document.getElementById("vOption").value;
-  if (vOption == "Bus" || vOption == "Truck") {
-    document.getElementById("VTprice").innerHTML = 1000;
-  } else if (vOption == "Microbus") {
-    document.getElementById("VTprice").innerHTML = 500;
-  } else if (vOption == "Motorcycle") {
-    document.getElementById("VTprice").innerHTML = 250;
+  var roption = document.getElementById('roption').value;
+  var foption = document.getElementById('foption').value;
+  var pName = document.getElementById('pName').value;
+  var pPhone = document.getElementById('pPhone').value;
+  var pSeatName = document.getElementById('pSeatName').value;
+  var qnt = document.getElementById('qnt').value;
+  var vName = document.getElementById('vName').value;
+  var vNumber = document.getElementById('vNumber').value;
+  var date = document.getElementById('vNumber').date;
+
+  if(vOption == 'vnull' || roption == ''|| foption == ''){
+    console.log("Not Selected Option");
+  }
+  else{
+    if(vOption == 'Passenger')
+    {
+      if(pName ='' || pPhone == '' || pSeatName =='' || qnt == '' || date == '')
+      {
+
+      }
+      else
+      {
+        modal.style.display = "block";
+        var tNo = 1000;
+        document.getElementById("tNo").innerHTML = tNo;
+        document.getElementById("VtNo").innerHTML = tNo;
+        document.getElementById("tPname").innerHTML = document.getElementById("pName").value;
+        document.getElementById("fName").innerHTML = document.getElementById("foption").value;
+        document.getElementById("tPhone").innerHTML = document.getElementById("pPhone").value;
+        document.getElementById("tSeat").innerHTML = document.getElementById("pSeatName").value;
+        document.getElementById("tVname").innerHTML = document.getElementById("vName").value;
+        document.getElementById("tVnumber").innerHTML = document.getElementById("vNumber").value;
+        document.getElementById('tPqunt').innerHTML = document.getElementById('qnt').value;
+        // document.getElementById('sVqunt').innerHTML = document.getElementById('qnt').value;
+        document.getElementById("sDate").innerHTML = document.getElementById("date").value;
+        document.getElementById("sdDate").innerHTML = document.getElementById("date").value;
+
+        var quantity = document.getElementById("qnt").value;
+        document.getElementById("PTprice").innerHTML = quantity * 100;
+
+        var vOption = document.getElementById("vOption").value;
+        if (vOption == "Bus" || vOption == "Truck") {
+          document.getElementById("VTprice").innerHTML = 1000;
+        } else if (vOption == "Microbus") {
+          document.getElementById("VTprice").innerHTML = 500;
+        } else if (vOption == "Motorcycle") {
+          document.getElementById("VTprice").innerHTML = 250;
+        }
+      }
+    }
+    else{
+      if(vName == '' || vNumber == '')
+      {
+
+      }
+      else
+      {
+        modal.style.display = "block";
+        var tNo = 1000;
+        document.getElementById("tNo").innerHTML = tNo;
+        document.getElementById("VtNo").innerHTML = tNo;
+        document.getElementById("tPname").innerHTML = document.getElementById("pName").value;
+        document.getElementById("fName").innerHTML = document.getElementById("foption").value;
+        document.getElementById("tPhone").innerHTML = document.getElementById("pPhone").value;
+        document.getElementById("tSeat").innerHTML = document.getElementById("pSeatName").value;
+        document.getElementById("tVname").innerHTML = document.getElementById("vName").value;
+        document.getElementById("tVnumber").innerHTML = document.getElementById("vNumber").value;
+        document.getElementById('tPqunt').innerHTML = document.getElementById('qnt').value;
+        // document.getElementById('sVqunt').innerHTML = document.getElementById('qnt').value;
+        document.getElementById("sDate").innerHTML = document.getElementById("date").value;
+        document.getElementById("sdDate").innerHTML = document.getElementById("date").value;
+
+        var quantity = document.getElementById("qnt").value;
+        document.getElementById("PTprice").innerHTML = quantity * 100;
+
+        var vOption = document.getElementById("vOption").value;
+        if (vOption == "Bus" || vOption == "Truck") {
+          document.getElementById("VTprice").innerHTML = 1000;
+        } else if (vOption == "Microbus") {
+          document.getElementById("VTprice").innerHTML = 500;
+        } else if (vOption == "Motorcycle") {
+          document.getElementById("VTprice").innerHTML = 250;
+        }
+      }
+    }
   }
 };
 
